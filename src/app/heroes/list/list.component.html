@@ -1,0 +1,13 @@
+<h1>Heroes list</h1>
+<h3 *ngIf="deletedHero; else wait">Deleted Hero: {{ deletedHero }}</h3>
+
+<ng-template #wait>
+    <h3>Waiting...</h3>
+</ng-template>
+<ul>
+    <li *ngFor="let hero of heroes; let i=index">
+        {{ i+1 }} - {{ hero }}
+    </li>
+</ul>
+
+<button (click)="eraseRandom()">Erase random</button>
